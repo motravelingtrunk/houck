@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Interactive Image Applet -->
+<!-- 2021 Brandon Ingli -->
+<!-- https://portfolio.brandoningli.com -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Houck</title>
+</head>
+
+<body class="home">
+
+    <div class="interactiveApplet home">
+        <noscript>Warning: JavaScript is required to properly use this tool!</noscript>
+        <div class="mobileWarning">Warning: This experience works best on a Desktop computer.</div>
+        <div id="imageAndMap">
+            <img class="shown showpointer" id="closedTrunk" src="closed_trunk.png" />
+            <svg id="openedTrunk" viewBox="0 0 1076 1146">
+                    <image xlink:href="filled_open_trunk.png"></image>
+                    <a href="spike/">
+                        <g title="Railroad Spike" class="modal-popup-shape"  cursor="pointer" pointer-events="all">
+                            <path d="M 203 763 L 198 800 L 404 873 L 443 903 L 443 908 L 395 903 L 186 832 L 178 837 L 166 834 L 162 828 L 162 814 L 163 804 L 168 789 L 179 772 L 198 760 L 203 763"/>
+                        </g>
+                    </a>
+                    <a href="gold/">
+                        <g title="Gold and Silver" class="modal-popup-shape" cursor="pointer" pointer-events="all">
+                        <path d="M 617 698 L 622 695 L 635 688 L 655 688 L 664 692 L 672 699 L 676 708 L 674 710 L 687 714 L 696 723 L 700 731 L 700 737 L 714 741 L 723 748 L 729 760 L 730 777 L 727 786 L 714 796 L 722 805 L 729 818 L 729 835 L 725 845 L 710 851 L 697 850 L 685 846 L 674 852 L 660 853 L 648 851 L 637 857 L 620 858 L 603 851 L 601 849 L 586 847 L 574 840 L 569 853 L 563 856 L 548 850 L 541 843 L 531 846 L 516 845 L 505 842 L 503 838 L 496 840 L 480 841 L 464 835 L 454 825 L 449 816 L 448 805 L 449 803 L 432 796 L 420 780 L 419 764 L 419 764 L 422 754 L 431 745 L 439 742 L 439 727 L 448 715 L 462 705 L 476 703 L 488 702 L 495 709 L 499 713 L 509 704 L 522 702 L 538 704 L 543 708 L 546 699 L 555 690 L 569 687 L 581 687 L 593 690 L 594 693 L 605 693 L 615 696 L 617 698" />
+                        </g>
+                    </a>
+                    <a href="compass/">
+                        <g title="Compass" class="modal-popup-shape" cursor="pointer" pointer-events="all">
+                        <path d="M 974 742 L 973 769 L 958 804 L 944 824 L 925 839 L 903 847 L 874 847 L 855 836 L 837 824 L 826 810 L 820 795 L 819 774 L 821 750 L 833 727 L 845 707 L 859 691 L 883 676 L 900 669 L 918 672 L 930 677 L 927 672 L 928 663 L 933 656 L 947 650 L 963 652 L 972 657 L 981 668 L 983 676 L 977 684 L 967 691 L 956 691 L 951 697 L 963 714 L 970 724 L 972 734 L 973 743" />
+                        </g>
+                    </a>
+                  </svg>
+        </div>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("opened")) {
+                document.querySelector("img#closedTrunk").classList.remove("shown");
+                document.querySelector("svg#openedTrunk").classList.add("shown");
+            }
+            document.querySelector("img#closedTrunk").onclick = () => {
+                document.querySelector("img#closedTrunk").classList.remove("shown");
+                document.querySelector("svg#openedTrunk").classList.add("shown");
+            };
+        </script>
+        </div>
+    </div>
+</body>
+
+</html>
