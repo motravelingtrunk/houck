@@ -88,10 +88,21 @@
 
 .interactiveApplet .columns {
     display: flex;
+    flex-direction: row;
 }
 
 .interactiveApplet .column {
     text-align: center;
+}
+
+.interactiveApplet .column:not(:first-child){
+    margin-left: 0.5em;
+}
+
+.interactiveApplet .column.vertcenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .interactiveApplet .halfcolumn {
@@ -130,6 +141,10 @@
 .interactiveApplet div.button:hover {
     background-color: white;
     color: black;
+}
+
+.interactiveApplet.plainText img{
+    width: 100%;
 }
 
 @media only screen and (max-width: 750px) {
